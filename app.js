@@ -3,7 +3,11 @@ const lastName = document.getElementById("lastname")
 const submitButton = document.getElementById('submit')
 
 function validateSubmit() {
-    firstName.value && lastName.value && enableButton()
+    const regex = new RegExp(/[A-Za-z]{1,}/)
+    const firstNameValid = firstName.value && regex.test(firstName.value)
+    const lastNameValid = lastName.value && regex.test(lastName.value)
+
+    firstNameValid && lastNameValid && enableButton()
     !firstName.value || !lastName.value && disableButton()
 }
 
