@@ -1,7 +1,10 @@
 const firstName = document.getElementById("firstname")
 const lastName = document.getElementById("lastname")
 const emailSection = document.getElementById('emailSection')
-const confirmSubscribe = document.getElementById('confirmSubscribe')
+const email =  document.getElementById('email')
+const comment =  document.getElementById('comment')
+
+const isSubscribed = document.getElementById('isSubscribed')
 const submitButton = document.getElementById('submit')
 
 function validateSubmit() {
@@ -26,6 +29,12 @@ function toggleEmail() {
     emailSection.style.visibility = ('visible')
 }
 
+function sendData() {
+
+    document.getElementById("form").action = path;
+    document.getElementById("form").submit();
+}
+
 firstName.addEventListener('input', validateSubmit)
 lastName.addEventListener('input', validateSubmit)
-confirmSubscribe.addEventListener('input', toggleEmail)
+isSubscribed.addEventListener('input', toggleEmail)

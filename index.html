@@ -7,22 +7,22 @@
         <title>JS Form - No Framework</title>
     </head>
     <body>
-        <form>
+        <form id="form" action="https://jsonplaceholder.typicode.com/users" method="POST">
             <h1>JS Form - No Framework</h1>
             <label for="firstname">First name:</label>
             <input type="text" name="firstname" id="firstname" required title="First Name" placeholder="First Name">
             <label for="lastname">Last name:</label>
             <input type="text" name="lastname" id="lastname" required title="Last Name" placeholder="Last Name"><br>
-            <label for="message">Any comments?:</label><br>
+            <label for="comment">Any comments?:</label><br>
             <textarea name="message" rows="10" cols="40"></textarea><br>
-            <input type="checkbox" name="confirmSubscribe" id="confirmSubscribe">
-            <label for="subscribe">Subscribe me:</label><br>
+            <input type="checkbox" name="isSubscribed" id="isSubscribed">
+            <label for="isSubscribed">Subscribe me:</label><br>
             <section id="emailSection" style="visibility: hidden">
                 <label for="email">Email:</label>
                 <input type="email" name="email"><br>
             </section>
            
-            <button type="submit" id="submit" disabled>Submit</button>
+            <button type="submit" onclick="sendData()" id="submit" disabled>Submit</button>
         </form>
         <script src="app.js"></script>
     </body>
