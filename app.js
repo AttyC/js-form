@@ -1,5 +1,7 @@
 const firstName = document.getElementById("firstname")
 const lastName = document.getElementById("lastname")
+const emailSection = document.getElementById('emailSection')
+const confirmSubscribe = document.getElementById('confirmSubscribe')
 const submitButton = document.getElementById('submit')
 
 function validateSubmit() {
@@ -17,5 +19,13 @@ function enableButton() {
 function disableButton() {
     submitButton.setAttribute('disabled', 'disabled')
 }
+
+function toggleEmail() {
+    emailSection.style.visibility === ('visible') ? 
+    emailSection.style.visibility = ('hidden') :
+    emailSection.style.visibility = ('visible')
+}
+
 firstName.addEventListener('input', validateSubmit)
 lastName.addEventListener('input', validateSubmit)
+confirmSubscribe.addEventListener('input', toggleEmail)

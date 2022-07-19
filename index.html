@@ -15,10 +15,13 @@
             <input type="text" name="lastname" id="lastname" required title="Last Name" placeholder="Last Name"><br>
             <label for="message">Any comments?:</label><br>
             <textarea name="message" rows="10" cols="40"></textarea><br>
-            <input type="checkbox" name="subscribe">
+            <input type="checkbox" name="confirmSubscribe" id="confirmSubscribe">
             <label for="subscribe">Subscribe me:</label><br>
-            <label for="email">Email:</label>
-            <input type="email" name="email"><br>
+            <section id="emailSection" style="visibility: hidden">
+                <label for="email">Email:</label>
+                <input type="email" name="email"><br>
+            </section>
+           
             <button type="submit" id="submit" disabled>Submit</button>
         </form>
         <script src="app.js"></script>
