@@ -7,7 +7,7 @@ let emailValid = false
 const comment =  document.getElementById('comment')
 
 const isSubscribed = document.getElementById('isSubscribed')
-const submitButton = document.getElementById('submit')
+const submitButton = document.getElementById('submitBtn')
 const form = document.getElementById("form")
 const url = document.getElementById("form").action
 
