@@ -1,0 +1,72 @@
+body, input::placeholder {
+    font-family: 'Spline Sans Mono', monospace;
+    font-size: 16px;
+    color: #0F0508;
+}
+
+form, input, textarea, button {
+    border-radius: 10px;
+    margin: 1rem 0;
+    padding: 0.5rem;
+}
+
+label {
+    font-weight: bold;
+    margin-left: 0.5rem;
+}
+
+form {
+    background-color: #F4F5E0;
+    padding: 2rem;
+    border-top: #F9B5AC 7px solid;
+    border-left: #F9B5AC 7px solid;
+    border-right: #987284 7px solid;
+    border-bottom: #987284 7px solid;
+}
+
+h1 {
+    font-family: 'Rampart One', cursive;
+    font-size: 2rem;
+    color: #1A090D;
+    text-shadow: #EE7674;;
+}
+
+button, input, textarea {
+    font-size: 0.9rem;
+    letter-spacing: 0.03em;
+    padding: 0.5rem 1rem;
+}
+
+input::placeholder {
+    font-size: 0.75rem;
+}
+
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin: 0 0.5rem;
+}
+.subscribe {
+    display: inline-flex;
+}
+
+.main {
+    display: flex;
+    background-color:#1A090D;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.names {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#email_section p {
+    background: white;
+    color: #E42825;
+    font-size: 0.85rem;
+    font-weight: bold;
+    padding: 1rem;
+}

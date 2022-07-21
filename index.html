@@ -4,25 +4,39 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@500&family=Rampart+One&family=Spline+Sans+Mono:ital@0;1&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="index.css">
         <title>JS Form - No Framework</title>
     </head>
     <body>
-        <form id="form" action="https://jsonplaceholder.typicode.com/users" method="POST">
-            <h1>JS Form - No Framework</h1>
-            <label for="firstname">First name:</label>
-            <input type="text" name="firstname" id="firstname" required title="First Name" placeholder="First Name">
-            <label for="lastname">Last name:</label>
-            <input type="text" name="lastname" id="lastname" required title="Last Name" placeholder="Last Name"><br>
-            <label for="comment">Any comments?:</label><br>
-            <textarea name="message" rows="10" cols="40"></textarea><br>
-            <input type="checkbox" name="isSubscribed" id="isSubscribed">
-            <label for="isSubscribed">Subscribe me:</label><br>
-            <section id="emailSection" style="visibility: hidden">
-                <label for="email">Email:</label>
-                <input type="email" name="email" id="email"><br>
-            </section>
-            <button type="submit" id="submitBtn" disabled>Submit</button>
-        </form>
+        <section class="main">
+            <form id="form" action="https://jsonplaceholder.typicode.com/users" method="POST">
+                <h1>JS Form - No Framework</h1>
+                <section class="names">
+                    <div class="first_name">
+                        <label for="firstname">First name:</label>
+                        <input type="text" name="firstname" id="firstname" required title="First Name" placeholder="e.g. Ella">
+                    </div>
+                    <div class="last_name">                   
+                        <label for="lastname">Last name:</label>
+                        <input type="text" name="lastname" id="lastname" required title="Last Name" placeholder="e.g. Fitzgerald">
+                    </div>
+                </section>
+                <label for="comment">Any comments?</label><br>
+                <textarea name="message" rows="10" cols="40" placeholder="Tell us how we can help"></textarea><br>
+                <div class="subscribe">
+                    <label for="is_subscribed">Subscribe me:</label>
+                    <input type="checkbox" name="is_subscribed" id="is_subscribed">
+                </div>
+                <section id="email_section" style="visibility: hidden">
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email"><br>
+                </section>
+                <button type="submit" id="submitBtn" disabled>Submit</button>
+            </form>
+        </section>
         <script src="app.js"></script>
     </body>
 </html>
