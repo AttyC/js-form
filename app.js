@@ -24,9 +24,8 @@ function validateSubmit() {
 
 function validateEmail(email) {
 
-    const regex = new RegExp(/[A-Za-z]{1,}/)
-    debugger
-    emailValid = email?.value && regex.test(email.value)
+    emailValid = email?.value != ''
+    //TODO regex for Safari on ios
 
     if(!emailValid) {
         showEmailPrompt()
