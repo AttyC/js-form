@@ -2,11 +2,11 @@ const firstName = document.getElementById("firstname")
 const lastName = document.getElementById("lastname")
 
 const email =  document.getElementById('email')
-const emailSection = document.getElementById('emailSection')
+const emailSection = document.getElementById('email_section')
 let emailValid = false
 const comment =  document.getElementById('comment')
 
-const isSubscribed = document.getElementById('isSubscribed')
+const isSubscribed = document.getElementById('is_subscribed')
 const submitButton = document.getElementById('submitBtn')
 const form = document.getElementById("form")
 const url = document.getElementById("form").action
@@ -38,7 +38,6 @@ function validateEmail(email) {
         event.preventDefault()
     } else {
         hideEmailPrompt()
-        form.submit()
     }
 }
 
