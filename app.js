@@ -1,7 +1,8 @@
 const firstName = document.getElementById("firstname")
 const lastName = document.getElementById("lastname")
-const emailSection = document.getElementById('emailSection')
+
 const email =  document.getElementById('email')
+const emailSection = document.getElementById('emailSection')
 let emailValid = false
 const comment =  document.getElementById('comment')
 
@@ -9,9 +10,13 @@ const isSubscribed = document.getElementById('isSubscribed')
 const submitButton = document.getElementById('submit')
 const form = document.getElementById("form")
 const url = document.getElementById("form").action
+
 const successMessage = "Thanks for your submission, "
 const errorMessage = "Something went wrong, please try again!"
 const emailPrompt = "Please enter your email address in the correct format"
+
+let submitMessage = document.createElement('p')
+let emailMessage = document.createElement('p')
 
 function validateSubmit() {
     const regex = new RegExp(/[A-Za-z]{1,}/)
@@ -29,6 +34,7 @@ function validateEmail(email) {
 
     if(!emailValid) {
         showEmailPrompt()
+        email.focus()
         event.preventDefault()
     } else {
         hideEmailPrompt()
@@ -55,16 +61,29 @@ function sendData() {
     document.getElementById("form").submit();
 }
 
-function showSuccessMessage(data) {
-    emailSection.append(successMessage + data.firstName.value)
+function hideSubmitMessage() {
+    submitMessage.innerHTML = ""
 }
 
+function showSubmitMessage(data, status) {
+    form.append(submitMessage)
+
+    if(status === 200 || 201) {
+        submitMessage.innerHTML = successMessage + data.firstName.value
+        setTimeout(hideSubmitMessage, 2000 )
+        form.reset()
+    } else {
+        submitMessage.innerHTML = errorMessage 
+    }
+ }
+
 function showEmailPrompt() {
-    document.getElementById("email_prompt").innerHTML = emailPrompt 
+    emailSection.append(emailMessage)
+    emailMessage.innerHTML = emailPrompt 
 }
 
 function hideEmailPrompt() {
-    document.getElementById("email_prompt").innerHTML = "" 
+    emailMessage.innerHTML = "" 
 }
 
 async function postData(url, data = {}) {
@@ -77,17 +96,18 @@ async function postData(url, data = {}) {
       body: JSON.stringify(data) 
     });
 
-    response.status === 200 || 201 ? showSuccessMessage(data) : showerrorMessage()
+    showSubmitMessage(data, response.status)
     return response.json()
   }
 
 firstName.addEventListener('input', validateSubmit)
 lastName.addEventListener('input', validateSubmit)
 isSubscribed.addEventListener('input', toggleEmailVisibility)
-submitButton.addEventListener("click", function(event){
+submitButton.addEventListener('click', function(){
     isSubscribed.checked && validateEmail(email)
   });
-form.addEventListener("submit", function(event){
+
+form.addEventListener('submit', function(event){
     event.preventDefault()
     const fields = {firstName, lastName, comment, isSubscribed, email,
         ...(isSubscribed.checked && emailValid && email)}
