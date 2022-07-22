@@ -22,7 +22,7 @@ form {
     border-left: #F9B5AC 7px solid;
     border-right: #987284 7px solid;
     border-bottom: #987284 7px solid;
-    width: 80%;
+    max-width: 80%;
 }
 
 h1 {
