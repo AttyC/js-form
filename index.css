@@ -22,6 +22,7 @@ form {
     border-left: #F9B5AC 7px solid;
     border-right: #987284 7px solid;
     border-bottom: #987284 7px solid;
+    width: 80%;
 }
 
 h1 {
@@ -35,6 +36,14 @@ button, input, textarea {
     font-size: 0.9rem;
     letter-spacing: 0.03em;
     padding: 0.5rem 1rem;
+}
+
+input, textarea {
+    width: 80%;
+}
+textarea {
+    max-width: 20rem;
+    height: 10rem;
 }
 
 input::placeholder {
